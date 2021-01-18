@@ -4,6 +4,9 @@
   "description": "Boleto generator in Node.js",
   "main": "index.js",
   "scripts": {
+    "build": "npm run clean && copyfiles -u 1 lib/**/*.json dist",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
     "lint": "eslint .",
     "test": "mocha \"./test/unit/**/*.spec.js\" && mocha \"./test/integration/**/*.spec.js\" && mocha \"./test/e2e/**/*.spec.js\""
   },
@@ -26,7 +29,8 @@
     "eslint-plugin-standard": "^2.0.1",
     "mocha": "^3.2.0",
     "moment": "https://github.com/pagarme/moment/archive/0.0.5.tar.gz",
-    "ramda": "^0.23.0"
+    "ramda": "^0.23.0",
+    "copyfiles": "^2.1.0"
   },
   "author": "Pedro Franceschi",
   "license": "MIT",
